@@ -1,12 +1,8 @@
 # myapp.rb
 require 'sinatra'
-require 'rack/cors'
+require 'sinatra/cors'
 
-use Rack::Cors do |config|
-  config.allow do |allow|
-    allow.origins '*'
-  end
-end
+set :allow_origin, "*"
 
 get '/' do
   "Hello from #{ENV['REGION']}"
