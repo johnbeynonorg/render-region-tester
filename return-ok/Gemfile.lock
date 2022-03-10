@@ -7,6 +7,8 @@ GEM
     puma (5.5.2)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-protection (2.1.0)
       rack
     ruby2_keywords (0.0.5)
@@ -18,10 +20,12 @@ GEM
     tilt (2.0.10)
 
 PLATFORMS
+  aarch64-linux
   x86_64-linux
 
 DEPENDENCIES
   puma
+  rack-cors
   sinatra
 
 BUNDLED WITH
