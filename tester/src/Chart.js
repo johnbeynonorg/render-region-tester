@@ -71,16 +71,19 @@ class Chart extends React.Component {
 
   render() {
     return (
-      <div>
-				<h2>{this.props.region}</h2>
-				<p>min: {this.state.min}sec max: {this.state.max}sec p95: {this.state.p95}sec</p>
+      <li className="col-span-1 bg-white rounded-lg shadow p-2">
+				<div className="w-full flex items-center justify-between">
+					<p className='text-2xl'>{this.props.region}</p>
+					<p className='text-sm'>min: {this.state.min}sec max: {this.state.max}sec p95: {this.state.p95}sec</p>
+				</div>	
  				<div>
 					<HighchartsReact
 						highcharts={Highcharts}
 						options={this.state.chartOptions}
 					/>
 				</div>
-      </div>
+				<p className='text-xs text-gray-400'>{this.props.url}</p>
+      </li>
     );  }
 }
 
