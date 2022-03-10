@@ -1,5 +1,23 @@
 services:
   - type: web
+    name: region-tester
+    env: static
+    routes:
+      - type: rewrite
+        source: /oregon
+        destination: https://test-oregon.onrender.com
+      - type: rewrite
+        source: /singapore
+        destination: https://test-singapore-ak20.onrender.com
+      - type: rewrite
+        source: /frankfurt
+        destination: https://test-frankfurt.onrender.com
+      - type: rewrite
+        source: /ohio
+        destination: https://test-ohio.onrender.com
+    buildCommand: yarn build
+    staticPublishPath: ./build
+  - type: web
     name: test-frankfurt
     region: frankfurt
     env: ruby
