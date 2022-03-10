@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+const percentile = require("percentile");
 
 class Chart extends React.Component {
 	constructor (props) {
@@ -9,6 +10,9 @@ class Chart extends React.Component {
 		this.checkResponseTime.bind(this)
 
     this.state = {
+			min: 0,
+			max: 0,
+			p95: 0,
       chartOptions: {
 				title: null,
 				chart: {
@@ -42,50 +46,40 @@ class Chart extends React.Component {
 	}
 
 	update() {
-		console.log("Updating...")
-		console.log(this.state.chartOptions.series[0].data)
 		let newData = this.state.chartOptions.series[0].data.concat(this.checkResponseTime())
+		
+		if (newData.length > 50) {
+			newData.shift()
+		}
 
-		// this.setState(prevState => ({
-		// 	chartOptions: {
-		// 		series: [{
-		// 			data: { ...prevState.chartOptions.series[0], newData}
-		// 		}]
-		// 	}
-		// }));
-
-		this.setState({ chartOptions: {
+		this.setState({ 
+			min: Math.min(...newData).toFixed(3), 
+			max: Math.max(...newData).toFixed(3),  
+			p95: percentile(95, newData).toFixed(3),
+			chartOptions: {
 			...this.state.chartOptions,
 			series: [{
 					data: newData
 			}]
 		}});
-
-		// this.setState({
-		// 	chartOptions: {
-		// 		series: [{
-		// 			data:  newData
-		// 		}]
-		// 	}}
-		// )
 	}
 
 	componentDidMount() {
-		setInterval(() => this.update(), 5000)
-		//this.update()
+		this.update()
+		setInterval( () => this.update(), 2000)
 	}
-
 
   render() {
     return (
       <div>
 				<h2>{this.props.region}</h2>
+				<p>min: {this.state.min}sec max: {this.state.max}sec p95: {this.state.p95}sec</p>
  				<div>
-						<HighchartsReact
+					<HighchartsReact
 						highcharts={Highcharts}
 						options={this.state.chartOptions}
 					/>
-					</div>
+				</div>
       </div>
     );
   }
