@@ -1,0 +1,38 @@
+ services:
+ 
+  - type: web
+      name: test-frankfurt
+      region: frankfurt
+      env: ruby
+      buildCommand: cd return-ok && ./render-build.sh
+      startCommand: ./render-start.sh
+      envVars:
+        - key: REGION
+          value: Frankfurt
+  - type: web
+    name: test-oregon
+    region: oregon
+    env: ruby
+    buildCommand: cd return-ok && ./render-build.sh
+    startCommand: ./render-start.sh
+    envVars:
+      - key: REGION
+        value: Oregon
+  - type: web
+    name: test-ohio
+    region: ohio
+    env: ruby
+    buildCommand: cd return-ok && ./render-build.sh
+    startCommand: ./render-start.sh
+    envVars:
+      - key: REGION
+        value: Ohio
+  - type: web
+    name: test-singapore
+    region: singapore
+    env: ruby
+    buildCommand: cd return-ok && ./render-build.sh
+    startCommand: ./render-start.sh
+    envVars:
+      - key: REGION
+        value: Singapore
