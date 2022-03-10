@@ -1,7 +1,7 @@
  services:
  
   - type: web
-      name: "test-frankfurt"
+      name: "testfrankfurt"
       region: frankfurt
       env: ruby
       buildCommand: cd return-ok && ./render-build.sh
@@ -10,7 +10,7 @@
         - key: REGION
           value: Frankfurt
   - type: web
-    name: 'test-oregon'
+    name: 'testoregon'
     region: oregon
     env: ruby
     buildCommand: cd return-ok && ./render-build.sh
@@ -19,7 +19,7 @@
       - key: REGION
         value: Oregon
   - type: web
-    name: 'test-ohio'
+    name: 'testohio'
     region: ohio
     env: ruby
     buildCommand: cd return-ok && ./render-build.sh
@@ -28,7 +28,7 @@
       - key: REGION
         value: Ohio
   - type: web
-    name: 'test-singapore'
+    name: 'testsingapore'
     region: singapore
     env: ruby
     buildCommand: cd return-ok && ./render-build.sh
