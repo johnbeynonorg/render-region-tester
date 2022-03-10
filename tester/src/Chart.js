@@ -81,8 +81,7 @@ class Chart extends React.Component {
 					/>
 				</div>
       </div>
-    );
-  }
+    );  }
 }
 
 export default Chart;
