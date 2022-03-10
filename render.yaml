@@ -15,7 +15,7 @@ services:
       - type: rewrite
         source: /ohio
         destination: https://test-ohio.onrender.com
-    buildCommand: yarn build
+    buildCommand: cd tester && yarn build
     staticPublishPath: ./build
   - type: web
     name: test-frankfurt
