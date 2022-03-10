@@ -1,7 +1,7 @@
  services:
  
   - type: web
-      name: 'test-frankfurt'
+      name: "test-frankfurt"
       region: frankfurt
       env: ruby
       buildCommand: cd return-ok && ./render-build.sh
