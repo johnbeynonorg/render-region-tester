@@ -4,7 +4,7 @@ services:
     region: frankfurt
     env: ruby
     buildCommand: cd return-ok && ./render-build.sh
-    startCommand: ./render-start.sh
+    startCommand: cd return-ok && ./render-start.sh
     envVars:
       - key: REGION
         value: Frankfurt
@@ -13,7 +13,7 @@ services:
     region: oregon
     env: ruby
     buildCommand: cd return-ok && ./render-build.sh
-    startCommand: ./render-start.sh
+    startCommand: cd return-ok && ./render-start.sh
     envVars:
       - key: REGION
         value: Oregon
@@ -22,7 +22,7 @@ services:
     region: ohio
     env: ruby
     buildCommand: cd return-ok && ./render-build.sh
-    startCommand: ./render-start.sh
+    startCommand: cd return-ok && ./render-start.sh
     envVars:
       - key: REGION
         value: Ohio
@@ -31,7 +31,7 @@ services:
     region: singapore
     env: ruby
     buildCommand: cd return-ok && ./render-build.sh
-    startCommand: ./render-start.sh
+    startCommand: cd return-ok && ./render-start.sh
     envVars:
       - key: REGION
         value: Singapore
