@@ -67,7 +67,7 @@ class Chart extends React.Component {
 	componentDidMount() {
 		this.update()
 
-		const refreshInterval = Math.floor(Math.random() * (2 - 10 + 1)) + 2;
+		const refreshInterval = Math.floor(Math.random() * (10 - 1 + 1)) + 1;;
 		setInterval( () => this.update(), refreshInterval * 1000)
 	}
 
