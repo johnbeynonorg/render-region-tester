@@ -14,10 +14,16 @@ function App() {
           <Chart region="Frankfurt VERCEL (redirect)" url="https://vercel-rewrite-rho.vercel.app/frankfurt" />        
           <Chart region="Ohio (rewrite)" url="/ohio" />
           <Chart region="Ohio (direct)" url="https://test-ohio.onrender.com" />
+          <Chart region="Ohio NETLIFY (redirect)" url="https://624411b07063450008875bd5--extraordinary-chaja-86c0d6.netlify.app/ohio" />
+          <Chart region="Ohio VERCEL (redirect)" url="https://vercel-rewrite-rho.vercel.app/ohio" />
           <Chart region="Oregon (rewrite)" url="/oregon" />
           <Chart region="Oregon (direct)" url="https://test-oregon.onrender.com" />
+          <Chart region="Oregon NETLIFY (redirect)" url="https://624411b07063450008875bd5--extraordinary-chaja-86c0d6.netlify.app/oregon" />
+          <Chart region="Oregon VERCEL (redirect)" url="https://vercel-rewrite-rho.vercel.app/oregon" />
           <Chart region="Singapore (rewrite)" url="/singapore" />
           <Chart region="Singapore (direct)" url="https://test-singapore-ak20.onrender.com" />
+          <Chart region="Singpore NETLIFY (redirect)" url="https://624411b07063450008875bd5--extraordinary-chaja-86c0d6.netlify.app/singapore" />
+          <Chart region="Singapore VERCEL (redirect)" url="https://vercel-rewrite-rho.vercel.app/singapore" />
            </ul>
       <p className="pt-2">Your location: {location.country} <ReactCountryFlag countryCode={location.country} /></p>
     </div>
